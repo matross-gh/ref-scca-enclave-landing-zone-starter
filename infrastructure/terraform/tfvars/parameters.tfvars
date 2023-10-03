@@ -8,10 +8,10 @@
 # The prefixes to use for all resources in this deployment
 org_name           = "anoa"         # This Prefix will be used on most deployed resources.  10 Characters max.
 deploy_environment = "dev"          # dev | test | prod
-environment        = "usgovernment" # public | usgovernment
+environment        = "public" # public | usgovernment
 
 # The default region to deploy to
-default_location = "usgovvirginia"
+default_location = "southcentralus"
 
 # Enable locks on resources
 enable_resource_locks = false # true | false
