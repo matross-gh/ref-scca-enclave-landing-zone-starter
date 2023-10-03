@@ -36,7 +36,7 @@ root_management_group_display_name = "anoa" # the root management group display 
 ################################################
 
 # Budgets for management groups
-enable_management_groups_budgets = false                  # enable budgets for management groups
+enable_management_groups_budgets = true                  # enable budgets for management groups
 budget_contact_emails            = ["anoa@microsoft.com"] # email addresses to send alerts to for this subscription
 budget_amount                    = "5000"
 budget_start_date                = "2023-09-01T00:00:00Z" # RFC3339 format: YYYY-MM-DDTHH:MM:SSZ
