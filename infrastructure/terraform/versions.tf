@@ -1,18 +1,18 @@
 terraform {
   # It is recommended to use remote state instead of local
-  backend "local" {}
+  # backend "local" {}
   # If you are using Azure Storage, You can update these values in order to configure your remote state. backend.conf is not required for local backend.
-  #backend "azurerm" {    
+  # backend "azurerm" {    
   #  key                  = "anoa"
-  #}
+  # }
   # If you are using Terraform Cloud, You can update these values in order to configure your remote state.
-  /*  backend "remote" {
-    organization = "{{ORGANIZATION_NAME}}"
-    workspaces {
-      name = "{{WORKSPACE_NAME}}"
-    }
+  
+  backend "azurerm" {
+    resource_group_name  = "anoa-tfstate-network-artifacts-rg"
+    storage_account_name = "anoaterraform"
+    container_name       = "tfstate"
+    key                  = "prod.terraform.tfstate"
   }
-  */
 
   required_version = ">= 1.3"
   required_providers {
