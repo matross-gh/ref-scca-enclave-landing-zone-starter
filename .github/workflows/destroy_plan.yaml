@@ -1,4 +1,4 @@
-name: Destroy Mission Enclave Managment plan [USE WITH CAUTION]
+name: Terraform Destroy
 
 on:
   workflow_dispatch:
