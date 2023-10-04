@@ -1,4 +1,4 @@
-name: Create Mission Enclave Management Landing Zone terraform plan
+name: Terraform Plan
 
 on:
   workflow_dispatch:
