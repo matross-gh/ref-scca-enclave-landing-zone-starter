@@ -23,13 +23,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: terraform plan
+      - name: Terraform Validate
+        uses: azurenoops/terraform-github-actions/terraform-validate@v1.34.2
+        with:
+          path: infrastructure/terraform
+          variables: |
+            subscription_id_hub = "${{ env.ARM_SUBSCRIPTION_ID }}"
+            vm_admin_password = "${{ env.VM_PASSWORD }}"           
+          var_file: |
+            infrastructure/terraform/tfvars/parameters.tfvars
+          backend_config: |
+            storage_account_name=${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}
+            container_name=${{ secrets.AZURE_STORAGE_CONTAINER_NAME }}            
+            resource_group_name=${{ secrets.TFSTATE_RG }}
+
+      - name: Terraform Plan
         uses: azurenoops/terraform-github-actions/terraform-plan@v1.34.2
         with:
           path: infrastructure/terraform
           variables: |
-            subscription_id_hub               = "${{ env.ARM_SUBSCRIPTION_ID }}"
-            vm_admin_password                 = "${{ env.VM_PASSWORD }}"           
+            subscription_id_hub = "${{ env.ARM_SUBSCRIPTION_ID }}"
+            vm_admin_password = "${{ env.VM_PASSWORD }}"           
           var_file: |
             infrastructure/terraform/tfvars/parameters.tfvars
           backend_config: |
