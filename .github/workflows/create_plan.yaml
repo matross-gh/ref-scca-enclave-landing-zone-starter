@@ -10,7 +10,7 @@ permissions:
 jobs:
   plan:
     runs-on: ubuntu-latest
-    name: Landing Zone terraform configuration
+    name: Terraform Configuration for ref-scca-enclave-landing-zone-starter
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
