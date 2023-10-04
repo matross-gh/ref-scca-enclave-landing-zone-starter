@@ -1,4 +1,4 @@
-name: Check for infrastructure drift on Mission Enclave Management
+name: Check for Drift
 
 on:
   workflow_dispatch:
